@@ -1,0 +1,27 @@
+# Use Ubuntu as the base image
+FROM ubuntu:22.04 AS base
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    curl \
+    unzip
+
+# Build Spring Boot Backend
+FROM maven:3.9 AS backend-build
+WORKDIR /app
+COPY ChatAPP/ . 
+RUN mvn clean package -DskipTests
+
+# Create Final Image for Backend
+FROM base
+WORKDIR /app
+
+# Copy the built JAR from Maven stage
+COPY --from=backend-build /app/target/*.jar app.jar
+
+# Expose backend port
+EXPOSE 8080
+
+# Start the Spring Boot application
+CMD ["java", "-jar", "app.jar"]

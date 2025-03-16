@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql:latest # Use the official MySQL image
+    container_name: mysql-chat-app-container # Optional: Set a custom container name
+    ports:
+      - "3306:3306" # Map the container's MySQL port to the host
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: chat_app_db
+      MYSQL_USER: chatapp
+      MYSQL_PASSWORD: chatapppwd
+    volumes:
+      - mysql_data:/var/lib/mysql # Persist data across container restarts
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount the SQL file
+    restart: always # Ensure the container restarts if it crashes
+    
+    
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: angular-app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: spring-boot-app
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/chat_app_db?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: chatapp
+      SPRING_DATASOURCE_PASSWORD: chatapppwd
+
+volumes:
+  mysql_data:

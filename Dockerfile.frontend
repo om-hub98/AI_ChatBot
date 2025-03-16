@@ -1,0 +1,23 @@
+# Step 1: Build Angular SSR app
+FROM node:22.13.1 AS build
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY ai_chat_app/package.json ai_chat_app/package-lock.json ./
+RUN npm install
+
+# Copy full project and build SSR
+COPY ai_chat_app/ ./
+RUN npm run build:ssr
+
+# Step 2: Run Angular SSR server
+FROM node:22.13.1 AS production
+WORKDIR /app
+
+# Copy built SSR output
+COPY --from=build /app/dist/ai_chat_app/ ./
+
+EXPOSE 4000
+
+# Start SSR server
+CMD ["node", "server/server.mjs"]
