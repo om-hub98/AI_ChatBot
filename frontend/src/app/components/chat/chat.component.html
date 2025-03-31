@@ -1,0 +1,13 @@
+@for (chat of chats; track $index){
+<div class="message">
+    <!-- @if(chat.role === 'user'){ -->
+        <div class="question-container">
+            <p>{{ chat.question }}</p>
+        </div>
+    <!-- }else{ -->
+        <div class="answer-container">
+            <p>{{chat.answer}}</p>
+        </div>
+    <!-- } -->
+</div>
+}

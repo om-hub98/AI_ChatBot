@@ -1,0 +1,20 @@
+version: '3.9' # Specify the Docker Compose file format version
+
+services:
+  mysql:
+    image: mysql:latest # Use the official MySQL image
+    container_name: mysql-chat-app-container # Optional: Set a custom container name
+    ports:
+      - "3306:3306" # Map the container's MySQL port to the host
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: chat_app_db
+      MYSQL_USER: chatapp
+      MYSQL_PASSWORD: chatapppwd
+    volumes:
+      - mysql_data:/var/lib/mysql # Persist data across container restarts
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount the SQL file
+    restart: always # Ensure the container restarts if it crashes
+
+volumes:
+  mysql_data: # Define a named volume for data persistence

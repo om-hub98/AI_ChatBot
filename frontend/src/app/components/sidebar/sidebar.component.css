@@ -1,0 +1,53 @@
+.app-sidebar {
+    width: 250px;
+    color: #e0e0e0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.app-sidebar h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #f1f1f1;
+}
+
+/* .history-sidebar select {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    color: white;
+    border: none;
+    width: 100%;
+} */
+
+.history{
+    max-height: 600px; /* Adjust as needed */
+    overflow-y: auto;
+
+    .conv-label{
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+    .conv-History{
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+        padding-top:0.3rem;
+        padding-top:0.3rem;
+        overflow-y: auto;
+    
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        
+        :hover{
+            background-color: rgb(95, 95, 95);
+            /* padding: 0.2rem;
+            border-radius: 0.3rem; */
+        }
+    }
+}

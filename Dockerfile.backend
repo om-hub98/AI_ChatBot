@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 # Build Spring Boot Backend
 FROM maven:3.9 AS backend-build
 WORKDIR /app
-COPY ChatAPP/ . 
+COPY backend/ . 
 RUN mvn clean package -DskipTests
 
 # Create Final Image for Backend

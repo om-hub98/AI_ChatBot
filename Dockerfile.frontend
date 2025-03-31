@@ -3,11 +3,11 @@ FROM node:22.13.1 AS build
 WORKDIR /app
 
 # Copy package.json and install dependencies
-COPY ai_chat_app/package.json ai_chat_app/package-lock.json ./
+COPY frontend/package.json frontend/package-lock.json ./
 RUN npm install
 
 # Copy full project and build SSR
-COPY ai_chat_app/ ./
+COPY frontend/ ./
 RUN npm run build:ssr
 
 # Step 2: Run Angular SSR server

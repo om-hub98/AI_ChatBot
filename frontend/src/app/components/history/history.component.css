@@ -1,0 +1,79 @@
+
+.history{
+    max-height: 700px; 
+    overflow-y: auto;
+    color: white;
+    padding: 25px;
+
+    .history-header{
+        margin-bottom: 1rem;
+        display: flex;
+
+        button{
+            margin-left: 1rem;
+            color: white;
+            background-color: transparent;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            padding: 0px 5px;
+        }
+        button:hover {
+            background-color: #444;
+            border-radius: 9px;
+            
+        }
+    }
+    .conv-History{
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+        padding-top:0.3rem;
+        padding-top:0.3rem;
+        overflow-y: auto;
+    
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        
+        :hover{
+            background-color: rgb(95, 95, 95);
+            /* padding: 0.2rem;
+            border-radius: 0.3rem; */
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #2d2d2d;
+    color: white;
+    padding: 10px;
+    transition: width 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+  
+  .sidebar.closed {
+    width: 60px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #444;
+  }
+  

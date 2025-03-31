@@ -1,0 +1,13 @@
+<div class="history" >
+    <!-- @if(isOpen){ -->
+        <div class="history-header">
+            <h3>Conversation History</h3>
+            <button (click)="closeSideBar()">X</button>
+        </div>
+        @for (history of conversationHistory; track $index){
+            <div class="conv-History">
+                <a (click)="onConversationClick(history.conversationId)">{{ history.title }}</a>
+            </div>
+        <!-- } -->
+    }
+</div>

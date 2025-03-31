@@ -1,0 +1,49 @@
+<p-toast></p-toast>
+<div class="app-container">
+    <!-- Sidebar for chat history -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Chat prompt and output -->
+    <div class="container" [ngClass]="{'sidebar-collapsed': !sidebarOpen}">
+        <div class="parent-header">
+            <div class="child-left">
+                <div>
+                    <select id="models" name="models" [(ngModel)]="selectedModel" (change)="onModelChange()">
+                        <option value="" disabled selected hidden>Select Model</option>
+                        <option value="ChatGPT">ChatGPT</option>
+                        <option value="llama">LLAMA</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="newchat-btn" (click)="newChat()">New chat</button>
+                </div>
+            </div>
+            <div class="child-right">
+                <button class="toggle-sidebar-btn" [ngStyle]="{ 'display': isSidebarVisible ? 'block' : 'none' }"
+                    (click)="toggleSidebar()">☰</button>
+            </div>
+        </div>
+        <div class="chat-container">
+            <app-chat [chats]="messages"></app-chat>
+        </div>
+
+        <form (ngSubmit)="sendMessage()" class="input-form">
+            <div class="user-input-div">
+                <textarea type="text" [(ngModel)]="userInput" name="userInput" placeholder="Give me Prompt..." required
+                    autocomplete="off" spellcheck="false" (input)="adjustHeight($event)"
+                    (keydown.enter)="sendMessage($event)"></textarea>
+                <button type="submit" class="send-btn"> Send </button>
+            </div>
+        </form>
+    </div>
+
+    @if(sidebarOpen){
+    <app-history 
+        [isOpen]="sidebarOpen" 
+        [conversationHistory]="allConversationHistory"
+        (conversationSelected)="handleConversationSelectionFromHistory($event)"
+        (closeHistorySidebar)="toggleSidebar()"
+    ></app-history>
+    }
+
+</div>
