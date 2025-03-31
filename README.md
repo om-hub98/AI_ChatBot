@@ -1,36 +1,37 @@
-# AI Chatbot
+# AI Chatbot 🤖
 
-An AI-powered chatbot application built using Angular for the frontend and Spring Boot for the backend. This chatbot allows users to interact with AI and maintain a history of conversations.
+## About
+AI Chatbot is an intelligent chat application designed to facilitate seamless communication between users and an AI assistant. Built with Angular for the frontend and Spring Boot for the backend, this chatbot provides real-time responses, chat history management, and a smooth user experience. With Docker support, it is easy to deploy and scale.
 
-## Features
+## Features 🚀
 
-- User-friendly interface with Angular 22
-- AI-powered responses using OpenAI or other NLP models
-- Chat history management
-- Backend built with Spring Boot for handling requests
-- Docker support for deployment
+- 🎨 User-friendly interface with Angular 18
+- 🤖 AI-powered responses using OpenAI or other NLP models
+- 📜 Chat history management
+- 🏗️ Backend built with Spring Boot for handling requests
+- 🐳 Docker support for deployment
 
-## Tech Stack
+## Tech Stack 🛠️
 
 ### Frontend:
 
-- Angular 18
-- TypeScript
-- HTML, CSS
+- 🅰️ Angular 18
+- 🟦 TypeScript
+- 🎨 HTML, CSS
 
 ### Backend:
 
-- Spring Boot
-- Java
-- MySQL (Database)
+- ☕ Spring Boot
+- 🖥️ Java
+- 🗄️ MySQL (Database)
 
 ### Deployment:
 
-- Docker
-- Docker Compose
-- Nginx (for serving Angular frontend)
+- 🐳 Docker
+- 📦 Docker Compose
+- 🌐 Nginx (for serving Angular frontend)
 
-## Project Structure
+## Project Structure 📂
 
 ```
 ├── frontend/           # Angular frontend
@@ -39,16 +40,16 @@ An AI-powered chatbot application built using Angular for the frontend and Sprin
 ├── docker-compose.yml  # Docker Compose configuration
 ```
 
-## Setup & Installation
+## Setup & Installation ⚙️
 
-### Prerequisites
+### Prerequisites 📝
 
-- Node.js and npm (for frontend)
-- Java 11 or later (for backend)
-- MySQL (Database)
-- Docker (for containerization)
+- 🟢 Node.js and npm (for frontend)
+- ☕ Java 11 or later (for backend)
+- 🗄️ MySQL (Database)
+- 🐳 Docker (for containerization)
 
-### Steps to Run Locally
+### Steps to Run Locally 💻
 
 1. Clone the repository:
 
@@ -76,10 +77,10 @@ An AI-powered chatbot application built using Angular for the frontend and Sprin
 4. Open your browser and go to:
 
    ```
-   http://localhost:4200
+   http://localhost:4000
    ```
 
-### Running with Docker
+### Running with Docker 🐳
 
 1. Build and start the containers:
 
@@ -88,26 +89,49 @@ An AI-powered chatbot application built using Angular for the frontend and Sprin
    ```
 
 2. Access the application at:
+   ### Frontend
+      ```
+      http://localhost:4000
+      ```
+   
+   ### Backend
+      ```
+      http://localhost:8080
+      ```
 
-   ```
-   http://localhost:8080
-   ```
-
-## API Endpoints
+## API Endpoints 🌐
 
 ### Chat API
 
-- `POST /chat` - Send a message to the AI chatbot
-- `GET /chat/history` - Retrieve chat history
+- 🔹 `POST /chat` - Send a message to the AI chatbot
+- 🔹 `GET /chat/history` - Retrieve chat history
 
-## Contributing
+## Contributors 👨‍💻👩‍💻
+
+We appreciate all contributions to this project! Special thanks to:
+
+- [@om-hub98](https://github.com/om-hub98) - Project Owner 👑
+- [@Blank-UV](https://github.com/Blank-UV) - Project Owner 👑
+
+## Contributing 🤝
 
 Pull requests are welcome! Please follow the standard Git workflow:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m "Added feature"`)
-4. Push to the branch (`git push origin feature-name`)
-5. Open a pull request
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature-name`)
+3. 📝 Commit your changes (`git commit -m "Added feature"`)
+4. 🔄 Push to the branch (`git push origin feature-name`)
+5. 📩 Open a pull request
 
+## Contact 📬
+
+For any inquiries, feel free to reach out:
+
+### Omraj Pradhan
+- 📧 Email: [omrajpradhan98@gmail.com](mailto:omrajpradhan98@gmail.com)
+- 🐙 GitHub: [om-hub98](https://github.com/om-hub98)
+
+### Yuvaraj Pradhan
+- 📧 Email: [pradhanyuvaraj98@gmail.com](mailto:pradhanyuvaraj98@gmail.com)
+- 🐙 GitHub: [Blank-UV](https://github.com/Blank-UV)
 
