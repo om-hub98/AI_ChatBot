@@ -20,10 +20,6 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
-//    @GetMapping({"/", "/{path:^(?!api).*}"})
-//    public String index() {
-//        return "forward:/index.html";
-//    }
 
     @PostMapping("/chat")
     public ChatResponse chat(@RequestBody ChatRequest request) throws Exception {
