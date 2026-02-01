@@ -101,10 +101,18 @@ AI Chatbot is an intelligent chat application designed to facilitate seamless co
 
 ## API Endpoints 🌐
 
+### User Authentication
+
+- 🔹 `POST /auth/register` - Registers a user
+- 🔹 `POST /auth/login` - Login to application
+
 ### Chat API
 
-- 🔹 `POST /chat` - Send a message to the AI chatbot
-- 🔹 `GET /chat/history` - Retrieve chat history
+- 🔹 `POST /chat` - Sends a user query to the AI 
+- 🔹 `GET /chat/history` - Retrieves chat history of the authenticated user.
+- 🔹 `GET /conversations/{model}` - Retrives chat models
+- 🔹 `GET conversations/id?conversationId=1` - Retrieves a conversation by its unique ID.
+- 🔹 `GET /conversations` - Retrives all previous conversations
 
 ## Contributors 👨‍💻👩‍💻
 
